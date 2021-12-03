@@ -1,42 +1,27 @@
 import express from 'express';
+import fs from 'fs';
+import { HomeRouter } from './Routers/HomeRouter.js';
+import { UserRouter } from './Routers/UserRouter.js';
+import { PostRouter } from './Routers/PostRouter.js';
+import { ActualRouter } from './Routers/ActualRouter.js';
+import { SearchRouter } from './Routers/SearchRouter.js';
 
 const app = express();
+app.use(express.json());
 
-//Для чтения тела POST запроса
-const urlencodedParser = express.urlencoded({extended: false});
-const port = '8000';
+const PORT = '8000';
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
+app.use('/', HomeRouter);
+app.use('/user', UserRouter);
+app.use('/post', PostRouter);
+app.use('/actual', ActualRouter);
+app.use('/search', SearchRouter);
 
-app.post('/', urlencodedParser, (req, res) => {
-    const name = req.body.name;
-    const responseMessage = "Hello " + name + "!"
-    res.send(responseMessage)
-})
+//function makes formated post
+export function FormatPost(post) {
+    return `<div><h1>${post.name}</h1> <i>${post.date}</i> <p>${post.text}<p></div>`
+}
 
-const userRouter = express.Router();
-app.use('/user', userRouter);
-
-//TODO: Возращать данные из какого-нибудь статичного JSON файла или простого JS объекта по ID пользователя и выводить на экран его никнейм.
-userRouter.get('/:id', (req, res) => {
-    res.send('User id = ' + req.params.id);
-})
-
-//TODO: Написать запрос на получение всех пользователей
-
-//TODO: Написать роут для твиттов (напр. /post)
-//TODO: Написать запрос для получения всех твиттов (пока можно хранить ввиде JSON файла или JS объекта)
-//TODO: Написать запрос для получения твитта по его ID
-//TODO: Написать POST запрос для отправки твитта (пока никуда записывать его не надо, нужно просто вернуть отправвленные данные назад)
-
-//TODO: Роут для актуального
-//TODO: Написать запрос на получение списка актуального
-
-//TODO: Роут для поиска
-//TODO: Написать запрос на поиск среди твиттов (просто по совпадению куска текста)
-
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+app.listen(PORT, () => {
+    console.log(`Example app listening at http://localhost:${PORT}`)
 })

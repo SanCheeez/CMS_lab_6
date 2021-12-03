@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "avatar": "./img/UserAvatars/user1.jpg",
+        "background": "./img/UserBackgrounds/user_back1.jpeg",
+        "name": "Александр",
+        "nickname": "1SanCheez1",
+        "description": "Я стараюсь быть одновременно похожим на других, но в то же время от них отличаться. Люблю рассуждать о многих вещах. Могу увидеть во всём хорошее и плохое.",
+        "registration": {
+            "month": "октябрь",
+            "year": "2021"
+        },
+        "in_reading": "4",
+        "readers": "1"
+    },
+    {
+        "id": "2",
+        "avatar": "./img/UserAvatars/user2.jpg",
+        "background": "./img/UserBackgrounds/user_back2.jpeg",
+        "name": "MARKUL",
+        "nickname": "MARKMARKUL",
+        "description": "Pressure Tour",
+        "registration": {
+            "month": "июль",
+            "year": "2010"
+        },
+        "in_reading": "126",
+        "readers": "95,3 тыс."
+    },
+    {
+        "id": "3",
+        "avatar": "./img/UserAvatars/user3.jpg",
+        "background": "./img/UserBackgrounds/user_back3.jpeg",
+        "name": "Oxxxymiron",
+        "nickname": "norimyxxxo",
+        "description": "miXXXtape: Смутное Время (2014-2021)",
+        "registration": {
+            "month": "февраль",
+            "year": "2010"
+        },
+        "in_reading": "301",
+        "readers": "1,2 млн."
+    }
+]

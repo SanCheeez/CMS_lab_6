@@ -1,0 +1,67 @@
+[
+    {
+        "id": "1",
+        "avatar_url": "./img/UserAvatars/user1.jpg",
+        "image": "",
+        "date": "27 нояб.",
+        "text": "Прошло 3 года, а потом ещё 3 года, а потом ещё 3 года, а потом ещё 3 года, а потом ещё 3 года, а потом ещё 3 года, а потом ещё 3 года, а потом ещё 3 года, а потом ещё 3 года",
+        "name": "Александр",
+        "nickname": "1SanCheez1",
+        "comments": 1253,
+        "retweets": 177,
+        "likes": 562,
+        "is_liked": true
+    },
+    {
+        "id": "2",
+        "avatar_url": "./img/UserAvatars/user1.jpg",
+        "image": "",
+        "date": "18 окт.",
+        "text": "Я почистил компьютер",
+        "name": "Семён",
+        "nickname": "TheSteinHaus",
+        "comments": 1208,
+        "retweets": 179,
+        "likes": 162,
+        "is_liked": true
+    },
+    {
+        "id": "3",
+        "avatar_url": "./img/UserAvatars/user1.jpg",
+        "image": "",
+        "date": "1 апр.",
+        "text": "Все слышали про Моргенштерна",
+        "name": "Моргенштерн",
+        "nickname": "MORGENSHTERN",
+        "comments": 15,
+        "retweets": 17,
+        "likes": 56,
+        "is_liked": false
+    },
+    {
+        "id": "4",
+        "avatar_url": "./img/UserAvatars/user1.jpg",
+        "image": "",
+        "date": "28 авг.",
+        "text": "У меня сегодня ДР если что :)",
+        "name": "Александр",
+        "nickname": "1SanCheez1",
+        "comments": 7,
+        "retweets": 255,
+        "likes": 1562,
+        "is_liked": false
+    },
+    {
+        "id": "5",
+        "avatar_url": "./img/UserAvatars/user1.jpg",
+        "image": "",
+        "date": "29 авг.",
+        "text": "@1SanCheez1, с прошедшим",
+        "name": "Дмитрий",
+        "nickname": "Dewen",
+        "comments": 13,
+        "retweets": 77,
+        "likes": 262,
+        "is_liked": true
+    }
+]
