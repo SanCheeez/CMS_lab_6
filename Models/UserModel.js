@@ -15,4 +15,4 @@ const UserSchema = new Schema({
     readers: String,
 })
 
-export const User = mongoose.model('Users', UserSchema);
+export const User = mongoose.model('Users', UserSchema, 'Users');

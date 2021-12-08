@@ -13,7 +13,13 @@ SearchRouter.get('/:text', (req, res) => {
         if (err) {
             res.send('Посты не найдены');
         } else {
-            console.log(posts);
+            const searchResponse = posts.filter((item) => item.text.includes(req.params.text));
+            console.log(searchResponse);
+            if (posts.length === 0) {
+                res.send("<h2>Не найдено совпадений</h2>");
+            } else {
+                res.send(searchResponse);
+            }
         }
     });
     // posts = posts.filter((item) => item.text.includes(req.params.text)).map(FormatPost);

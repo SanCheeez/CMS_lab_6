@@ -5,8 +5,8 @@ import { User } from '../Models/UserModel.js';
 export const UserRouter = express.Router();
 
 //TODO: Возращать данные из какого-нибудь статичного JSON файла или простого JS объекта по ID пользователя и выводить на экран его никнейм.
-UserRouter.get('/:name', (req, res) => {
-    User.findOne({ name: req.params.name }, (err, user) => {
+UserRouter.get('/:id', (req, res) => {
+    User.findOne({ id: req.params.id }, (err, user) => {
         if (err) {
             res.send('Пользователь не найден');
             console.log(err);

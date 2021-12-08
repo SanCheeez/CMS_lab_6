@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const PostSchema = new Schema({
+    id: String,
     avatar: String,
     image: String,
     date: String,
@@ -15,4 +16,4 @@ const PostSchema = new Schema({
     is_liked: Boolean,
 })
 
-export const Post = mongoose.model('Posts', PostSchema);
+export const Post = mongoose.model('Posts', PostSchema, 'Posts');
