@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import IActual from "../Interfaces/ActualInterface";
 
 const Schema = mongoose.Schema;
 
@@ -9,4 +10,4 @@ const ActualSchema = new Schema({
     tweets: Number,
 })
 
-export const Actual = mongoose.model('Actual', ActualSchema, 'Actual');
+export default mongoose.model<IActual>('Actual', ActualSchema);

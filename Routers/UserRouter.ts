@@ -1,12 +1,12 @@
-import express from 'express';
+import express, { Request, Response, Router } from 'express';
 import fs from 'fs';
-import { User } from '../Models/UserModel.js';
+import Users from '../Models/UserModel';
 
-export const UserRouter = express.Router();
+export const UserRouter: Router = express.Router();
 
 //TODO: Возращать данные из какого-нибудь статичного JSON файла или простого JS объекта по ID пользователя и выводить на экран его никнейм.
-UserRouter.get('/:id', (req, res) => {
-    User.findOne({ id: req.params.id }, (err, user) => {
+UserRouter.get('/:id', (req: Request, res: Response) => {
+    Users.findOne({ id: req.params.id }, (err, user) => {
         if (err) {
             res.send('Пользователь не найден');
             console.log(err);
@@ -19,8 +19,8 @@ UserRouter.get('/:id', (req, res) => {
     // res.send('<h1>User nickname = ' + users[0].nickname + '</h1>');
 })
 //TODO: Написать запрос на получение всех пользователей
-UserRouter.get('/', (req, res) => {
-    User.find({}, (err, user) => {
+UserRouter.get('/', (req: Request, res: Response) => {
+    Users.find({}, (err, user) => {
         if (err) {
             res.send('Не удалось найти ни одного пользователя');
             console.log(err);

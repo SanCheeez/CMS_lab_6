@@ -1,12 +1,12 @@
-import express from 'express';
+import express, { Request, Response, Router } from 'express';
 import fs from 'fs';
-import { Actual } from '../Models/ActualModel.js'
+import Actual from '../Models/ActualModel'
 
 //TODO: Роут для актуального
-export const ActualRouter = express.Router();
+export const ActualRouter: Router = express.Router();
 
 //TODO: Написать запрос на получение списка актуального
-ActualRouter.get('/', (req, res) => {
+ActualRouter.get('/', (req: Request, res: Response) => {
     Actual.find({}, (err, actual) => {
         if (err) {
             res.send('Нет актуальных новостей');

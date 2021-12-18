@@ -1,8 +1,6 @@
-import mongoose from "mongoose";
+import { Document } from "mongoose";
 
-const Schema = mongoose.Schema;
-
-const PostSchema = new Schema({
+export default interface IPost extends Document {
     id: String,
     avatar: String,
     image: String,
@@ -14,6 +12,4 @@ const PostSchema = new Schema({
     retweets: Number,
     likes: Number,
     is_liked: Boolean,
-})
-
-export const Post = mongoose.model('Posts', PostSchema, 'Posts');
+}

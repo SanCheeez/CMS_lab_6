@@ -1,19 +1,18 @@
-import express from 'express';
+import express, { Request, Response, Router } from 'express';
 import fs from 'fs';
-import { FormatPost } from '../index.js';
-import { Post } from '../Models/PostModel.js';
+import Posts from '../Models/PostModel';
 
 
 //TODO: Роут для поиска
-export const SearchRouter = express.Router();
+export const SearchRouter: Router = express.Router();
 
 //TODO: Написать запрос на поиск среди твиттов (просто по совпадению куска текста)
-SearchRouter.get('/', (req, res) => {
-    Post.find({}, (err, posts) => {
+SearchRouter.get('/', (req: Request, res: Response) => {
+    Posts.find({}, (err, posts) => {
         if (err) {
             res.send('Посты не найдены');
         } else {
-            const searchResponse = posts.filter((item) => item.text.includes(req.query.text));
+            const searchResponse = posts.filter((item) => item.text.includes(req.query.text.toString()));
             if (posts.length === 0) {
                 res.send("<h2>Не найдено совпадений</h2>");
             } else {
